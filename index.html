@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>6B's Click Spel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <h1>6B's Click Spel</h1>
+        <div id="gameArea">
+            <button id="clickButton">Click Mij!</button>
+            <p>Score: <span id="score">0</span></p>
+            <div id="starburst" style="display: none;"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+#gameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #ADD8E6;
+}
+
+#clickButton {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#clickButton:hover {
+    background-color: #45a049;
+}
+
+const clickButton = document.getElementById("clickButton");
+const scoreDisplay = document.getElementById("score");
+let score = 0;
+
+// Click Button Event Listener
+clickButton.addEventListener("click", () => {
+  score++; // Update the score
+  scoreDisplay.textContent = score; // Display the updated score
+});
