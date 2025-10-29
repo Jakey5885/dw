@@ -1,39 +1,23 @@
-/* Google Fonts */
+/* Fonts & body */
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to top, #87ceeb, #ffffff);
-  color: #1c1c1c;
   margin: 0;
   padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to top, #87ceeb, #ffffff);
   overflow-x: hidden;
-  animation: fadeIn 0.6s ease;
-}
-
-/* Airplane flying animation */
-.airplane {
-  position: absolute;
-  top: 20%;
-  left: -50px;
-  font-size: 40px;
-  animation: fly 15s linear infinite;
-  z-index: 0;
-}
-
-@keyframes fly {
-  0% { left: -50px; transform: rotate(0deg); }
-  50% { left: 100%; transform: rotate(10deg); }
-  100% { left: -50px; transform: rotate(0deg); }
+  position: relative;
+  height: 100vh;
 }
 
 /* Navigation */
 nav {
-  background: rgba(30, 64, 175, 0.9);
-  padding: 15px 30px;
+  background: rgba(30,64,175,0.9);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px 30px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 nav h1 {
@@ -60,12 +44,12 @@ nav ul li a.active {
   color: #93c5fd;
 }
 
-/* Main content */
+/* Main */
 main {
   text-align: center;
   margin-top: 150px;
-  position: relative;
   z-index: 1;
+  position: relative;
 }
 
 main h2 {
@@ -94,18 +78,30 @@ main p {
   transform: scale(1.05);
 }
 
-/* Fade-in animation */
+/* Airplane page transition */
+#airplane-transition {
+  position: fixed;
+  top: 50%;
+  left: -200px;
+  width: 200px;
+  height: auto;
+  z-index: 10;
+  pointer-events: none;
+  display: none;
+  transform: translateY(-50%);
+}
+
+#airplane-transition img {
+  width: 100%;
+  height: auto;
+}
+
+/* Fade-in animation for page */
+body.fade-in {
+  animation: fadeIn 0.6s ease;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-
-/* Rules list example */
-.rules-list {
-  text-align: left;
-  max-width: 600px;
-  margin: 0 auto;
-  font-size: 18px;
-}
-
-/* Page-specific styling can be added for About, Players, Support */
